@@ -58,6 +58,7 @@ router.get("/", auth.optional, function (req, res, next) {
     req.query.favorited
       ? User.findOne({ username: req.query.favorited })
       : null,
+    req.query.title ? Item.find({ title: req.query.title }) : null,
   ])
     .then(function (results) {
       var seller = results[0];
