@@ -56,6 +56,7 @@ const reducer = (state = {}, action) => {
         tab: null,
         title: action.title,
         currentPage: 0,
+        noItemFound: `No items found for "${action.title}"`
       }
     case HOME_PAGE_LOADED:
       return {
