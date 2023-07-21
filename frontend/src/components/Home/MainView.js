@@ -70,6 +70,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const MainView = (props) => {
+  const noSearchResult = props.noItemFound;
   return (
     <div>
       <div className="feed-toggle">
@@ -86,7 +87,7 @@ const MainView = (props) => {
         </ul>
       </div>
     {
-    props.items.length === 0 ? 
+    noSearchResult ?
     <div style={{ "text-align": "center" }} id="empty">No results for "{props.title}"</div> :
       <ItemList
       pager={props.pager}
